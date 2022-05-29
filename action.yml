@@ -1,0 +1,15 @@
+name: 'Issue Linker'
+description: 'Links a pull request to its associated issues.'
+inputs:
+  github-token:
+    required: true
+    description: 'A GitHub access token with write access to the project.'
+  commit-regexp:
+    required: true
+    description: 'A regular expression to parse the issue number from the commit message template.'
+  section:
+    required: false
+    description: 'Section to overwrite in the pull request template.'
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
